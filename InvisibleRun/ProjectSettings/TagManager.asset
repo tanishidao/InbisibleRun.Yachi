@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - Enemy
   - Destroy
+  - InvisibleNow
+  - Drink
   layers:
   - Default
   - TransparentFX
