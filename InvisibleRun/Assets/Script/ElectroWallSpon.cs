@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyWallSpon : MonoBehaviour
+public class ElectroWallSpon : MonoBehaviour
 {
-    public GameObject SearchLight;
+    public GameObject ElectroWall;
 
     private float Wallterval;
 
@@ -20,7 +20,7 @@ public class EnemyWallSpon : MonoBehaviour
     private void Start()
     {
 
-        WallTime = GetRandomWallTime();
+        Wallterval = GetRandomWallTime();
     }
 
     private void Update()
@@ -29,11 +29,10 @@ public class EnemyWallSpon : MonoBehaviour
 
         if (WallTime > Wallterval)
         {
-            GameObject Search = Instantiate(SearchLight);
+            GameObject Search = Instantiate(ElectroWall);
 
-            Search.transform.position = new Vector2(10f, 0f);
-            Debug.Log(Search.transform.position + "ç¿ïWÇ≈èoåª");
-            Debug.Log(WallTime + "ïbÇ≈èoåª");
+            Search.transform.position = new Vector2(10f, 2f);
+            
 
 
             WallTime = 0f;

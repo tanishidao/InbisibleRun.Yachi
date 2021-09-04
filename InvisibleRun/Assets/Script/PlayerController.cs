@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Ground"))
         {
             IsGround = true;
-            Debug.Log("ínñ Ç…êGÇÍÇƒÇ¢ÇÈ");
+           
         }
 
 

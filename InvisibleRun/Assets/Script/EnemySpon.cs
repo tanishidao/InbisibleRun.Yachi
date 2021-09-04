@@ -35,8 +35,6 @@ public class EnemySpon : MonoBehaviour
             GameObject Search = Instantiate(SearchLight);
 
             Search.transform.position = GetRandomPos();
-            Debug.Log(Search.transform.position+ "ç¿ïWÇ≈èoåª");
-            Debug.Log(time + "ïbÇ≈èoåª");
             
             
             time = 0f;
