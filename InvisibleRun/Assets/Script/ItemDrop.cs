@@ -10,7 +10,7 @@ public class ItemDrop : MonoBehaviour
     private float DropInterval;
 
     public float MaxTime;
-    public float MinTime;
+    public float MinTime = 5f;
 
 
     void Start()
@@ -25,6 +25,7 @@ public class ItemDrop : MonoBehaviour
 
         if (time > DropInterval)
         {
+            Debug.Log("ƒAƒCƒeƒ€‚Í‚Á‚¹‚¤");
             GameObject Items = Instantiate(Item);
             Item.transform.position = new Vector2(10f, 2f);
 

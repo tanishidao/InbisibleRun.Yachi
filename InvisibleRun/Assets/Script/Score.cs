@@ -26,5 +26,7 @@ public class Score : MonoBehaviour
         {
             TimeScore += 10f;
         }
+
+ 
     }
 }

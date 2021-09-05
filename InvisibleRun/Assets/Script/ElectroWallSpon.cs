@@ -11,8 +11,8 @@ public class ElectroWallSpon : MonoBehaviour
     private float WallTime = 0f;
 
     //ŽžŠÔ‚ðƒ‰ƒ“ƒ_ƒ€‚É‚·‚é
-    public float minTime = 10f;
-    public float maxTime = 30f;
+    public float minTime ;
+    public float maxTime ;
 
 
 
