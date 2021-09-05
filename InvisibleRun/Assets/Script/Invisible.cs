@@ -23,6 +23,8 @@ public class Invisible : MonoBehaviour
     private float ScoreTime;
 
     public bool ItemUse;
+
+    public Image image;
    
    
    
@@ -51,6 +53,7 @@ public class Invisible : MonoBehaviour
             ScoreUp.enabled = true;
             StockItem.SetActive(false);
             ItemUse = false;
+            image.fillAmount -= time;
 
         }
         if (InvisibleTime < time)

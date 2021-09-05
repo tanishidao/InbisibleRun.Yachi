@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class EnemyMove : MonoBehaviour
 {
      public Vector2 lightMove;
+
+  
     private void FixedUpdate()
     {
         Rigidbody2D rigid2D = this.GetComponent<Rigidbody2D>();
@@ -18,9 +21,6 @@ public class EnemyMove : MonoBehaviour
             {
             Destroy(this.gameObject);
         }
-        if(collision.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("GAMEOVER");
-        }
+       
     }
 }

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,7 +12,8 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D Rigid2D;
     private int JumpCount;
 
-
+    public Text GO;
+    public GameObject MENU;
 
 
     void Start()
@@ -29,7 +32,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("space„‚µ‚½");
             ///IsGround = false;
             JumpCount++;
-            if(JumpCount >= 2)
+            if (JumpCount >= 2)
             {
                 IsGround = false;
             }
@@ -46,9 +49,22 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Ground"))
         {
             IsGround = true;
-           
+
         }
 
+
+    }
+
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (this.gameObject.CompareTag("Player") && collision.gameObject.CompareTag("Enemy"))
+        {
+
+            Debug.Log("GAMEOVER");
+            SceneManager.LoadScene("ResultScnene");
+
+        }
 
     }
 }
