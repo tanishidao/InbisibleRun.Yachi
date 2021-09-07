@@ -8,9 +8,10 @@ public class ItemDrop : MonoBehaviour
 
     private float time = 0f;
     private float DropInterval;
-
+    private int LevelUp = 0;
+    private bool cancel = false;
     public float MaxTime;
-    public float MinTime = 5f;
+    public float MinTime;
 
 
     void Start()
@@ -31,6 +32,25 @@ public class ItemDrop : MonoBehaviour
 
             time = 0f;
             DropInterval = GetRandomTime();
+        }
+        if (LevelUp == 0 && Score.Instance.Scores > 20000)
+        {
+
+            MaxTime = 12f;
+            MinTime = 10f;
+        }
+        if (cancel == true && Score.Instance.Scores > 100000)
+        {
+            Debug.Log("levelUp2");
+            MaxTime = 16f;
+            MinTime = 15f;
+            LevelUp = 1;
+        }
+        if (LevelUp > 1 && Score.Instance.Scores > 500000)
+        {
+            cancel = true;
+            MaxTime = 21f;
+            MinTime = 20f;
         }
     }
 

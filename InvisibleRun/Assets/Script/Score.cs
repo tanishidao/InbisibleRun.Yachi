@@ -5,26 +5,34 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
+    public readonly static Score Instance = new Score();
+    public float Scores;
+
+
     public Text ScoreText;
-    public float TimeScore;
+    
     public GameObject Player;
+
+    
+
     
     // Start is called before the first frame update
     void Start()
     {
-      
-    }
+        
 
+    }
     // Update is called once per frame
     void Update()
     {
-        TimeScore += 2f;
+        Instance.Scores += 1f;
+        
 
-        ScoreText.text = "スコア"+ TimeScore;
+        ScoreText.text = "スコア"+ Instance.Scores;
 
-        if(Player.GetComponent<Invisible>().ItemUse ==  false)
+        if (Player.GetComponent<Invisible>().ItemUse ==  false)
         {
-            TimeScore += 10f;
+            Instance.Scores += 4f;
         }
 
  

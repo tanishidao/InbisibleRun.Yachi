@@ -10,9 +10,12 @@ public class ElectroWallSpon : MonoBehaviour
 
     private float WallTime = 0f;
 
+    private int LevelUp = 0;
+
+    private bool cancel = false;
     //ŽžŠÔ‚ðƒ‰ƒ“ƒ_ƒ€‚É‚·‚é
-    public float minTime ;
-    public float maxTime ;
+    public float minTime;
+    public float maxTime;
 
 
 
@@ -32,7 +35,7 @@ public class ElectroWallSpon : MonoBehaviour
             GameObject Search = Instantiate(ElectroWall);
 
             Search.transform.position = new Vector2(10f, 2f);
-            
+
 
 
             WallTime = 0f;
@@ -40,9 +43,30 @@ public class ElectroWallSpon : MonoBehaviour
 
 
         }
+        if (LevelUp == 0 && Score.Instance.Scores > 20000)
+        {
+            
+            maxTime = 12f;
+            minTime = 10f;
+        }
+        if (cancel == true && Score.Instance.Scores > 100000)
+        {
+            Debug.Log("levelUp2");
+            maxTime = 16f;
+            minTime = 15f;
+            LevelUp = 1;
+        }
+        if(LevelUp >1 && Score.Instance.Scores > 500000)
+        {
+            cancel = true;
+            maxTime = 21f;
+            minTime = 20f;
+        }
+
     }
     private float GetRandomWallTime()
     {
         return Random.Range(minTime, maxTime);
     }
+
 }
