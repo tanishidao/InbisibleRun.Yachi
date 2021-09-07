@@ -13,6 +13,7 @@ public class SceneChange : MonoBehaviour
 public void JumpStart()
     {
         SceneManager.LoadScene("StartScene");
+        Score.Instance.Scores = 0;
     }
 
 }

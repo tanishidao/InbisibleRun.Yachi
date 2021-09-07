@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Invisible : MonoBehaviour
 {
     public bool GetItem = false;
-    public float InvisibleTime = 5f;
+    public float InvisibleTime = 8f;
 
     private float time = 0f;
 
@@ -15,6 +15,8 @@ public class Invisible : MonoBehaviour
     private GameObject DrinkBox;
 
     public GameObject StockItem;
+
+    public GameObject InvisibleSkin;
 
     public Text ScoreUp;
 
@@ -25,6 +27,7 @@ public class Invisible : MonoBehaviour
     public bool ItemUse;
 
     public Image image;
+    public AudioSource RIng;
    
    
    
@@ -37,36 +40,53 @@ public class Invisible : MonoBehaviour
         ScoreUp.enabled = false;
         StockItem.SetActive(false);
         ItemUse = true;
-       
+        image.enabled = false;
+        InvisibleSkin.SetActive(false);
+        AudioSource audioSource = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
+       
         ScoreUp.color = GetAlphaColor(ScoreUp.color);
         if (GetItem == true && Input.GetKeyDown(KeyCode.C))
         {
             this.tag = "InvisibleNow";
-            time = 0f;
-            GetComponent<Renderer>().material.color = Color.red;
+            
+            
+           /// GetComponent<Renderer>().material.color = Color.red;
             ScoreUp.enabled = true;
+            image.enabled = true;
             StockItem.SetActive(false);
             ItemUse = false;
-            image.fillAmount -= time;
+            image.fillAmount += 8f;
+            InvisibleSkin.SetActive(true);
+            GetItem = false;
+            RIng.PlayOneShot(RIng.clip);
 
         }
-        if (InvisibleTime < time)
+        if (image.fillAmount <= 0)
         {
             this.tag = "Player";
 
-            GetComponent<Renderer>().material.color = Color.white;
+           /// GetComponent<Renderer>().material.color = Color.white;
             ScoreUp.enabled = false;
             ItemUse = true;
+           /// InvisibleTime += 8f;
+            image.enabled = true;
+            InvisibleSkin.SetActive(false);
+
         }
        
-
-
+        if(ItemUse == false)
+        {
+            image.fillAmount -=  Time.deltaTime * 0.125f;
+           /// InvisibleTime -= Time.deltaTime;
+        }
+        
+       
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
