@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2359478852378751414}
   - component: {fileID: 6558864661060832247}
   - component: {fileID: 6785495251488097232}
-  - component: {fileID: 1905364862518754271}
   - component: {fileID: 5224405566410605806}
   m_Layer: 0
   m_Name: SearchLight
@@ -122,23 +121,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
---- !u!58 &1905364862518754271
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8828955710116104499}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.13584119, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.6358412
+  m_Radius: 0.3
 --- !u!114 &5224405566410605806
 MonoBehaviour:
   m_ObjectHideFlags: 0
