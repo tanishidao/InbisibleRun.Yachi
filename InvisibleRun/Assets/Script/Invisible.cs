@@ -8,7 +8,7 @@ public class Invisible : MonoBehaviour
     public bool GetItem = false;
     public float InvisibleTime = 8f;
 
-    private float time = 0f;
+    
 
     public GameObject Drink;
 
@@ -16,7 +16,7 @@ public class Invisible : MonoBehaviour
 
     public GameObject StockItem;
 
-    public GameObject InvisibleSkin;
+
 
     public Text ScoreUp;
 
@@ -41,8 +41,9 @@ public class Invisible : MonoBehaviour
         StockItem.SetActive(false);
         ItemUse = true;
         image.enabled = false;
-        InvisibleSkin.SetActive(false);
+       
         AudioSource audioSource = GetComponent<AudioSource>();
+    
 
     }
 
@@ -62,10 +63,10 @@ public class Invisible : MonoBehaviour
             StockItem.SetActive(false);
             ItemUse = false;
             image.fillAmount += 8f;
-            InvisibleSkin.SetActive(true);
+            
             GetItem = false;
             RIng.PlayOneShot(RIng.clip);
-
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 0.3f);
         }
         if (image.fillAmount <= 0)
         {
@@ -76,8 +77,8 @@ public class Invisible : MonoBehaviour
             ItemUse = true;
            /// InvisibleTime += 8f;
             image.enabled = true;
-            InvisibleSkin.SetActive(false);
-
+            
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         }
        
         if(ItemUse == false)
