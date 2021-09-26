@@ -83,7 +83,7 @@ public class Invisible : MonoBehaviour
        
         if(ItemUse == false)
         {
-            image.fillAmount -=  Time.deltaTime * 0.125f;
+            image.fillAmount -=  Time.deltaTime * 0.3f;
            /// InvisibleTime -= Time.deltaTime;
         }
         
