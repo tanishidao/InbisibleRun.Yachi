@@ -14,6 +14,6 @@ public class InvisibleSircle : MonoBehaviour
     }
     void Update()
     {
-        image.fillAmount -= Time.deltaTime;
+        image.fillAmount -= Time.deltaTime * 2;
     }
 }

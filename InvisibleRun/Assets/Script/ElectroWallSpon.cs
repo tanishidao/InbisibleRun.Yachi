@@ -43,26 +43,27 @@ public class ElectroWallSpon : MonoBehaviour
 
 
         }
-        if (LevelUp == 0 && Score.Instance.Scores > 20000)
+        if (LevelUp <=1 && Score.Instance.Scores > 15000)
         {
-            
+            LevelUp++;
             maxTime = 12f;
-            minTime = 10f;
+            minTime = 11f;
         }
-        if (cancel == true && Score.Instance.Scores > 100000)
+        if ( Score.Instance.Scores > 20000)
         {
             Debug.Log("levelUp2");
             maxTime = 16f;
             minTime = 15f;
-            LevelUp = 1;
+            LevelUp++;
+
         }
-        if(LevelUp >1 && Score.Instance.Scores > 500000)
+        if( Score.Instance.Scores > 25000)
         {
             cancel = true;
             maxTime = 21f;
             minTime = 20f;
         }
-
+        
     }
     private float GetRandomWallTime()
     {
